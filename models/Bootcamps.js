@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const BootcamSchema = new mongoose.Schema({
+const BootcampSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Please add a name'],
@@ -99,7 +99,7 @@ const BootcamSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',
-        required: true
+        required: false
     }
 },
     {
@@ -107,3 +107,5 @@ const BootcamSchema = new mongoose.Schema({
         toObject: { virtuals: true }
 
     });
+
+module.exports = mongoose.model('Bootcamp', BootcampSchema);
