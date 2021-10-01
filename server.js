@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const colors = require('colors');
+const errorHandler = require('./middlewere/error');
 const connectDB = require('./config/db');
 
 
@@ -27,9 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 // Mount router
 app.use('/api/v1/bootcamps', bootcamps);
 
-app.get('/', (req, res) => {
-    res.status(200).json({ success: true, data: { id: 1 } });
-});
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
