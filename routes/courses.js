@@ -4,8 +4,8 @@ const { getCourses, getCourse, addCourse, updateCourse, deleteCourse } = require
 const Course = require('../models/Course');
 
 const router = express.Router({ mergeParams: true });
-const advancedResults = require('../middlewere/advancedResults');
 
+const advancedResults = require('../middlewere/advancedResults');
 const { protect, authorize } = require('../middlewere/auth');
 
 router.route('/').get(advancedResults(Course, {

@@ -4,13 +4,13 @@ const { getBootcamps, getBootcamp, createBootcamp, updateBootcamp, deleteBootcam
 
 const Bootcamp = require('../models/Bootcamp');
 
-const advancedResults = require('../middlewere/advancedResults');
 
 // Include other resource routers
 const courseRouter = require('./courses');
 
 const router = express.Router();
 
+const advancedResults = require('../middlewere/advancedResults');
 const { protect, authorize } = require('../middlewere/auth');
 
 // Re-route into other resource routers
