@@ -2,12 +2,6 @@
 
 > Backend API for DevCamper application, which is a bootcamp directory website
 
-## Install Dependencies
-
-```
-npm install
-```
-
 ## Run App
 
 ```
